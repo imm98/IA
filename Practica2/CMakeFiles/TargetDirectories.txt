@@ -1,0 +1,9 @@
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/rebuild_cache.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/edit_cache.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/BelkanSG.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/GLUILib.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/Belkan.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/obj3DLib.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/motorLib.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/modelosBelkanLib.dir
+/home/inaki/Universidad/3/2 Cuatrimestre/IA/practica2/CMakeFiles/comportamientosLib.dir

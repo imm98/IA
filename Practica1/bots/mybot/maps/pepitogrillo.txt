@@ -1,0 +1,6 @@
+genero:comedia
+sinopsis:de_un_pepito_grillo
+idiomas:espanol@ingles
+subtitulos:portugues
+web:duenduewbfuew
+temporada1:perdido_por_el_monte@1

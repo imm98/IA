@@ -1,0 +1,8 @@
+espanol
+ingles
+frances
+aleman
+italiano 
+polaco
+portugues
+ruso

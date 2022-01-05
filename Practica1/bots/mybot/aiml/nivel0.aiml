@@ -1,0 +1,218 @@
+<?xml version="1.0"
+encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Pregunta 1-->
+<category>
+	<pattern>Hablame un poco de ti</pattern>
+	<template>Bueno, me llamo Inaki Melguizo Marcos, y estudio al dobble grado en Ingenieria Informatica y Matematicas</template>
+</category>
+
+<category>
+	<pattern>^ Habl+ * ti ^ </pattern>
+	<template><srai>Hablame un poco de ti</srai></template>
+</category>
+
+<category>
+	<pattern>^ Dime * ti ^ </pattern>
+	<template><srai>Hablame un poco de ti</srai></template>
+</category>
+
+<category>
+	<pattern>^ Cuent+ * ti ^ </pattern>
+	<template><srai>Hablame un poco de ti</srai></template>
+</category>
+
+<!--Pregunta 2-->
+<category>
+	<pattern>Cual es tu mayor defecto</pattern>
+	<template> Mi mayor defecto es que soy un poco desordenado</template>
+</category>
+
+<category>
+	<pattern> ^ defect+ ^ </pattern>
+	<template> <srai>Cual es tu mayor defecto</srai></template>
+</category>
+
+
+
+<!--Pregunta 3-->
+<category>
+	<pattern>Que aspectos no te gustan de un jefe</pattern>
+	<template> Como me suele gustar mi trabajo, nunca he tenido ningún problema con ninguno de mis anteriores jefes </template>
+</category>
+
+<category>
+	<pattern> ^ no ^ gust+ ^ jefe ^ </pattern>
+	<template> <srai>Que aspectos no te gustan de un jefe </srai></template>
+</category>
+
+<!--Pregunta 4-->
+<category>
+	<pattern>Cuales son tus 3 mayores virtudes</pattern>
+	<template>Una de mis mayores virtudes es que al apasionarme tanto mi trabajo, me gusta dedicarle además de las horas de trabajo, tiempo por mi cuenta en mi tiempo libre. También, suelo complementarme bastante bien con mis compañeros de trabajo y también soy bastante exigente conmigo mismo </template>
+</category>
+
+<category>
+	<pattern>^ virtud+ ^</pattern>
+	<template><srai>Cuales son tus 3 mayores virtudes</srai> </template>
+</category>
+<!--Pregunta 5-->
+<category>
+	<pattern>Te consideras preparado para desempeniar las funciones de este puesto</pattern>
+	<template>Nada más leer la oferta de trabajo que recibí y lei en que consistia el trabajo, supe que era el trabajo idoneo para mi ya que requiere muchas habilidades que he ido adquiriendo durante mi formacion y tambien implica saber de otros temas que no controlo tanto pero que son de alto interes para mi y estaria encantado de aprender mas acerca de ellos</template>
+</category>
+
+<category>
+	<pattern>^ preparado ^</pattern>
+	<template><srai>Te consideras preparado para desempeniar las funciones de este puesto </srai> </template>
+</category>
+<!--Pregunta 6-->
+<category>
+	<pattern>Tienes experiencia en la realizacion de proyectos en equipos de trabajo</pattern>
+	<template>Durante todo el tiempo que estuve estudiando la carrera siempre he tenido que compenetrarme bien con mis compañeros de trabajo y en los otros trabajos en los que he estado la mayoria del tiempo consistia en debatir y comparar ideas entre mis companeros de trabajo</template>
+</category>
+
+<category>
+	<pattern>^ experiencia ^ equip+ ^</pattern>
+	<template><srai>Tienes experiencia en la realizacion de proyectos en equipos de trabajo </srai> </template>
+</category>
+<!--Pregunta 7-->
+<category>
+	<pattern>Realizarias un trabajo que no fuera tu especialidad</pattern>
+	<template> Si, siempre es importante no parar de aprender y seguir formandote por lo que me gustaria tambien en trabajos que no sean de mi especialidad </template>
+</category>
+
+<category>
+	<pattern> ^ no ^ especialidad</pattern>
+	<template> <srai> Realizarias un trabajo que no fuera tu especialidad</srai> </template>
+</category>
+<!--Pregunta 8-->
+<category>
+	<pattern>Te desplazarias de manera ocasional a otros lugares</pattern>
+	<template> No tengo hijos ni pareja por lo que no seria ningun inconveniente para mi pasar una temporada fuera de aquí. Además desde que tengo coche, no paro de cogerlo para ir a cualquier lado </template>
+</category>
+
+<category>
+	<pattern> ^ desplazar+ ^</pattern>
+	<template> <srai>Te desplazarias de manera ocasional a otros lugares</srai> </template>
+</category>
+
+
+<!--Pregunta 9-->
+<category>
+	<pattern>Te consideras una persona creativa </pattern>
+	<template>Bueno, depende del tema. Si es un tema en el que he tenido experiencia previamente me resulta mas facil tener creatividad, pero si es un area que no he tocado bastante durante mi formacion, no tengo tanta creatividad porque no quiero equivocrme al no conocer ciertos aspectos de ese area</template>
+</category>
+
+<category>
+	<pattern> * creativ+ ^</pattern>
+	<template> <srai>Te consideras una persona creativa</srai> </template>
+</category>
+<!--Pregunta 10-->
+<category>
+	<pattern>Que espectativas tienes de este trabajo</pattern>
+	<template>La verdad es que espero que sea un trabajo en el que siga aprendiendo y formandome y que no requiera actividades monotonas y mecanicas, que por lo que lei en la oferta de trabajo querria comenzar ya</template>
+</category>
+
+<category>
+	<pattern> ^ expectativas ^ trabajo ^</pattern>
+	<template> <srai>Que espectativas tienes de este trabajo</srai> </template>
+</category>
+<!--Pregunta 11-->
+<category>
+	<pattern>Que trabajos has tenido con esta tematica</pattern>
+	<template>Pues la verdad es que a pesar de ser una persona joven, he trabajado en otras dos empresas en las que desempene trabajos de programador de aplicaciones moviles</template>
+</category>
+
+<category>
+	<pattern>^ trabajos ^ tenido ^ tem+ ^ </pattern>
+	<template><srai>Que trabajos has tenido con esta tematica</srai></template>
+</category>
+<!--Pregunta 12-->
+<category>
+	<pattern>Normalmente te llevas trabajo a casa </pattern>
+	<template>En los dos trabajos que tuve previamente realizaba todo el trabajo en la oficina pero si algún dia tenía trabajo acumulado, no me importaba quedarme un rato mas en la oficina</template>
+</category>
+
+<category>
+	<pattern>^ trabaj+ ^ casa ^</pattern>
+	<template><srai>Normalmente te llevas trabajo a casa </srai></template>
+</category>
+<!--Pregunta 13-->
+<category>
+	<pattern>Cuales son tus aspiraciones salariales</pattern>
+	<template>Pues la verdad que es un tema al que le he dado bastantes vueltas y me gustaria ganar lo que gane en los dos trabajos en los que he trabajado, es decir, entre 1100 y 1300 euros</template>
+</category>
+
+<category>
+	<pattern>^ salar+ ^</pattern>
+	<template><srai>Cuales son tus aspiraciones salariales</srai></template>
+</category>
+
+<category>
+	<pattern>^ salariales ^</pattern>
+	<template><srai>Cuales son tus aspiraciones salariales</srai></template>
+</category>
+
+<!--Pregunta 14-->
+<category>
+	<pattern>Donde te ves dentro de cinco anios</pattern>
+	<template>Me veo trabajando en esta misma empresa y siguiendo creciendo con todos mis companieros para que siga mejorando la empresa</template>
+</category>
+
+<category>
+	<pattern>* cinco ^ anios ^</pattern>
+	<template><srai>Donde te ves dentro de cinco anios</srai></template>
+</category>
+<!--Pregunta 15-->
+<category>
+	<pattern>No tienes experiencia para el puesto a desempeniar</pattern>
+	<template>Pese a mi corta edad he teneido la oportunidad de trabajar en dos empresas pero durante un corto periodo de tiempo, pero si que es cierto que me tengo que acostumbrar todavia al mundo laboral. Sin embargo pienso que al ser lo que se requier en este puesto mi especialidad, no me va a suponer muchos inconvenientes mi falta de experiencia </template>
+</category>
+
+<category>
+	<pattern>^ No ^ experiencia ^ puesto ^</pattern>
+	<template><srai>No tienes experiencia para el puesto a desempeniar</srai> </template>
+</category>
+<!--Pregunta 16-->
+<category>
+	<pattern>Que sabes de la empresa y el puesto de trabajo </pattern>
+	<template>La verdad es que me habian hablado bastante bien de esta empresa y tambien me habian dicho que el puesto que habia vacante requeria de mucha resposabilidad y la verdad es que los retos me gustan </template>
+</category>
+
+<category>
+	<pattern>^ sabes ^ empresa ^ puesto ^</pattern>
+	<template><srai> Que sabes de la empresa y el puesto de trabajo </srai> </template>
+</category>
+
+<category>
+	<pattern>^ sabes ^ puesto ^ empresa ^</pattern>
+	<template><srai> Que sabes de la empresa y el puesto de trabajo </srai> </template>
+</category>
+<!--Pregunta 17-->
+<category>
+	<pattern> Que haces cuando consideras que tu jefe no tiene la razon</pattern>
+	<template>Las pocas veces que he dicrepado con mi jefe le he intentado dar mi opinion de la manera mas cautelosa posible hacerca de nuestro punto de desacuerdo pero teniendo claro que el que manda en la empresa y el que va a tomar las decisiones importantes va a ser el </template>
+</category>
+
+<category>
+	<pattern>^ haces ^ jefe ^ no ^ razon ^</pattern>
+	<template><srai> Que haces cuando consideras que tu jefe no tiene la razon </srai> </template>
+</category>
+<!--Pregunta 18-->
+<category>
+	<pattern>Por que deberiamos escogerte a ti </pattern>
+	<template> Porque tengo muchisima ambicion y desde chico he soniado con trabajar en un trabajo como este ya que la oferta cumple muchisimos de mis puntos fuertes que he formado durante mis estudios</template>
+</category>
+
+<category>
+	<pattern>^ escogerte ^ </pattern>
+	<template> <srai> Por que deberiamos escogerte a ti </srai></template>
+</category>
+
+<category>
+	<pattern>^ elegirte ^ </pattern>
+	<template> <srai> Por que deberiamos escogerte a ti </srai></template>
+</category>
+</aiml>

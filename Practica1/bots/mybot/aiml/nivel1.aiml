@@ -1,0 +1,358 @@
+<?xml version="1.0"
+encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category> 
+	<pattern>De que va (la serie) <set>seriesnetflix</set></pattern>
+	<template>
+		<srai>decode <map><name><star/></name>sinopsis</map></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>De que va (la serie) * </pattern>
+	<template>
+		La serie <star/> no está en el catálogo. Desea aniadirla?
+		<think><set name="serie"><star/></set></think>
+		<think> <set name="topic">aniadir</set> </think>
+	</template>
+</category>
+
+<topic name="aniadir">
+<category>
+	<pattern>  ^ [si vale perfecto] ^ </pattern>
+	<template> Vale, en que plataforma ofrece la serie <get name="serie"/>
+		<think> <set name="topic">plataforma</set> </think>
+	</template>
+</category>
+
+<category> 
+  <pattern> * </pattern>
+  <template> Vale, si necesitas algo mas aqui estoy</template>
+</category>
+</topic>
+
+<topic name="plataforma">
+<category>
+	<pattern> ^ netflix ^ </pattern>
+	 <template><think> <set name="cadena">seriesnetflix</set> </think>
+	 <think><addtoset>
+        <name><get name="cadena"/></name>
+        <key><get name="serie"/></key>
+      </addtoset>
+  </think>
+	A que genero pertenece</template>
+</category>
+
+<category>
+	<pattern> ^ Amazon Prime ^ </pattern>
+	<template>
+	 <think> <set name="cadena">seriesamazonprime</set> </think>
+	 <think><addtoset>
+        <name><get name="cadena"/></name>
+        <key><get name="serie"/></key>
+      </addtoset>
+  </think>
+	A que genero pertenece</template>
+
+</category>
+
+<category>
+	<pattern> * </pattern>
+	<template> Lo siento, no tengo esa plataforma</template>
+</category>
+</topic>
+
+<category>
+	<pattern> *</pattern>
+	<that>A que genero pertenece</that>
+	<template> 
+		<think><set name="genero"><star/></set></think>
+		De que va la serie 
+	</template>
+</category>
+
+<category>
+	<pattern>*</pattern>
+	<that> De que va la serie</that>
+	<template>
+		<think><set name="sinopsis"><star/></set></think>
+		Dime la lista de idiomas en los que esta disponible esta serie
+	</template>
+</category>
+
+<category>
+	<pattern>*</pattern>
+	<that> Dime la lista de idiomas en los que esta disponible esta serie </that>
+	<template> 
+		<think><set name="idiomas"><star/></set></think>
+		 Dime la lista de subtitulos en los que está disponible la serie
+	</template>
+</category>
+
+<category>
+	<pattern>*</pattern>
+	<that> Dime la lista de subtitulos en los que está disponible la serie</that>
+	<template>
+		<think><set name="subtitulos"><star/></set></think>
+		si conoces una direccion web de la serie indicada
+	</template>
+</category>
+
+<category>
+	<pattern>^ no ^</pattern>
+	<that>si conoces una direccion web de la serie indicada</that>
+	<template>
+		ya he creado la informacion basica de la serie sin la pagina web, si quieres añadir capitulos me lo dices 
+	</template>
+</category>
+
+
+<category>
+	<pattern>*</pattern>
+	<that>si conoces una direccion web de la serie indicada</that>
+	<template>
+		<think><set name="web"><star/></set></think>
+		ya he creado la informacion basica de la serie, si quieres añadir capitulos me lo dices 
+	</template>
+</category>
+
+
+<category>
+	<pattern>^ [si vale perfecto] ^</pattern>
+	<that> ya he creado la informacion basica de la serie, si quieres añadir capitulos me lo dices </that>
+	<template> 
+		<addtomap>
+        <name><get name="serie"/></name>
+        <key>genero</key>
+        <value><srai> codey <get name="genero"/> </srai></value>
+      </addtomap>
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>sinopsis</key>
+        <value><srai> code <get name="sinopsis"/> </srai></value>
+      </addtomap>  
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>idiomas</key>
+        <value><srai> codey <get name="idiomas"/> </srai></value>
+      </addtomap>  
+
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>subtitulos</key>
+        <value><srai> codey <get name="subtitulos"/> </srai></value>
+      </addtomap>  
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>web</key>
+        <value><srai> code <get name="web"/> </srai></value>
+      </addtomap>  
+      Dime la temporada del capitulo que desea aniadir 
+		
+      </template>
+</category>
+
+<category>
+	<pattern> ^ [si vale perfecto] ^</pattern>
+	<that> ya he creado la informacion basica de la serie sin la pagina web, si quieres añadir capitulos me lo dices  </that>
+	<template> 
+		<addtomap>
+        <name><get name="serie"/></name>
+        <key>genero</key>
+        <value><srai> codey <get name="genero"/> </srai></value>
+      </addtomap>
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>sinopsis</key>
+        <value><srai> code <get name="sinopsis"/> </srai></value>
+      </addtomap>  
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>idiomas</key>
+        <value><srai> codey <get name="idiomas"/> </srai></value>
+      </addtomap>  
+
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>subtitulos</key>
+        <value><srai> codey <get name="subtitulos"/> </srai></value>
+      </addtomap>  
+      
+		Dime la temporada del capitulo que desea aniadir
+      </template>
+</category>
+      <category>
+      		<pattern>*</pattern>
+	<that> ya he creado la informacion basica de la serie, si quieres añadir capitulos me lo dices </that>
+	<template> 
+		<addtomap>
+        <name><get name="serie"/></name>
+        <key>genero</key>
+        <value><srai> codey <get name="genero"/> </srai></value>
+      </addtomap>
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>sinopsis</key>
+        <value><srai> code <get name="sinopsis"/> </srai></value>
+      </addtomap>  
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>idiomas</key>
+        <value><srai> codey <get name="idiomas"/> </srai></value>
+      </addtomap>  
+
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>subtitulos</key>
+        <value><srai> codey <get name="subtitulos"/> </srai></value>
+      </addtomap>  
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>web</key>
+        <value><srai> code <get name="web"/> </srai></value>
+      </addtomap>  
+      ok, si necesitas algo mas pidemelo
+		
+      </template>
+</category>
+
+<category>
+	<pattern> *</pattern>
+	<that> ya he creado la informacion basica de la serie sin la pagina web, si quieres añadir capitulos me lo dices  </that>
+	<template> 
+		<addtomap>
+        <name><get name="serie"/></name>
+        <key>genero</key>
+        <value><srai> codey <get name="genero"/> </srai></value>
+      </addtomap>
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>sinopsis</key>
+        <value><srai> code <get name="sinopsis"/> </srai></value>
+      </addtomap>  
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>idiomas</key>
+        <value><srai> code <get name="idiomas"/> </srai></value>
+      </addtomap>  
+
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>subtitulos</key>
+        <value><srai> codey <get name="subtitulos"/> </srai></value>
+      </addtomap>  
+      
+		ok, si necesitas algo mas pidemelo
+      </template>
+</category>
+
+
+
+
+
+<category>
+	<pattern> <set>number</set></pattern>
+	<that>Dime la temporada del capitulo que desea aniadir </that>
+	<template>
+		<think><set name="temporada"><star/></set></think>
+		Dime el nombre del capitulo
+	</template>
+</category>
+
+
+
+
+
+
+
+
+<category>
+	<pattern>*</pattern>
+	<that>Dime el nombre del capitulo</that>
+	<template>
+		<think><set name="titulo"><star/></set></think>
+		Dime la duracion del capitulo 
+	</template>
+</category>
+
+<!--
+<category>
+  <pattern>*</pattern>
+  <template>
+    <think>
+    <set name="serie">manolo</set>
+    <set name="temporada">1</set>
+    <set name="titulo">el mas manolo</set>
+  </think>
+  Dime la duracion del capitulo 
+  </template>
+</category>
+-->
+
+<category>
+	<pattern><set>number</set></pattern>
+	<that>Dime la duracion del capitulo </that>
+	<template>
+    <think>
+      <set name="duracion"><star/></set>
+      
+    </think>
+   
+    
+  
+Es nueva la temporada
+
+	</template>
+  
+</category>
+
+
+<category>
+  <pattern> ^ [si claro] ^ </pattern>
+  <that> Es nueva la temporada </that>
+  <template>
+    <think>
+      <addtomap>
+        <name><get name="serie"/></name>
+        <key>temporada<get name="temporada"/></key>
+        <value><srai> code <get name="titulo"/>@<get name="duracion"/> </srai></value>
+      </addtomap>  
+    </think>
+    Este capitulo ya esta disponible en la plataforma 
+  </template>
+</category>
+
+
+<category>
+  <pattern> * </pattern>
+  <that> Es nueva la temporada </that>
+  <template> 
+    <think>
+      <set name="CopiaCapitulos"><map><name><get name="serie"/></name>temporada<get name="temporada"/></map></set>
+      <modifymap>
+        <name><get name="serie"/></name>
+        <key>temporada<get name="temporada"/></key>
+        <value> <srai> code <get name="CopiaCapitulos"/>@<get name="titulo"/>@<get name="duracion"/></srai></value>
+      </modifymap>
+    </think>
+    Perfecto, ya he aniadido el capitulo a la serie
+  </template>
+</category>
+
+
+
+  <category> 
+    <pattern>Anade un nuevo capitulo de la temporada <set>number</set> de * </pattern>
+    <template>
+      <think>
+        <set name="temporada"><star index="1"/></set>
+        <set name="serie"> <star index="2"/></set>
+      </think>
+      Dime el nombre del capitulo
+    </template>
+  </category>
+
+</aiml>
+
